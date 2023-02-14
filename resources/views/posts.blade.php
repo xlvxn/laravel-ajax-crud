@@ -12,6 +12,9 @@
         }
 
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -27,7 +30,6 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>No</th>
                                     <th>Title</th>
                                     <th>Content</th>
                                     <th>Aksi</th>
@@ -36,7 +38,6 @@
                             <tbody id="table-posts">
                                 @foreach($posts as $post)
                                 <tr id="index_{{ $post->id }}">
-                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->content }}</td>
                                     <td class="text-center">
@@ -51,8 +52,6 @@
             </div>
         </div>
     </div>
+    @include('components.modal-create')
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
